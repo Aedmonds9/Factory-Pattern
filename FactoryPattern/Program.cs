@@ -2,9 +2,18 @@
 {
     public class Program
     {
-        static void Main(string[] args)
+        public void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Would you like to create a new car or a new motorcycyle?");
+            var userVehicle = Console.ReadLine();
+
+           VehicleFactory factory = new VehicleFactory();
+           factory.CreateVehicle(userVehicle);
+            
+            Console.WriteLine("Want to make another vehicle?");
+            userVehicle = Console.ReadLine();
+
+
         }
     }
 }
