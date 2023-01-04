@@ -9,18 +9,18 @@ namespace FactoryPattern
     class VehicleFactory
     {
    
-       public Car CreateVehicle(string userVehicle)
+        public static IVehicle CreateVehicle(string userVehicle)
         {
             switch (userVehicle.ToLower())
             {
                 case "car":
                     Car myCar = new Car();
-                    break;
+                    return new Car();
                 case "motorcycle":
                     Motorcycle myMotorcycle = new Motorcycle();
-                    break;
+                    return new Motorcycle();
                 default:
-                    break;
+                    throw new ArgumentException();
             }
         }
 
